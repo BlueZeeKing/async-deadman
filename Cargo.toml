@@ -2,6 +2,9 @@
 name = "async-deadman"
 version = "1.0.0"
 edition = "2021"
+license = "MIT"
+repository = "https://github.com/BlueZeeKing/async-deadman"
+description = "A simple async deadman switch that triggers receivers when dropped"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

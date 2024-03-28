@@ -17,14 +17,17 @@ use std::{
 /// ```rust
 /// use async_deadman::Deadman;
 ///
-/// let (deadman, receiver) = Deadman::new();
+/// #[tokio::main] // does not have to be tokio
+/// async fn main() {
+///     let (deadman, receiver) = Deadman::new();
 ///
-/// tokio::spawn(async move {
-///    receiver.await;
-///    println!("Deadman was dropped");
-/// });
+///     tokio::spawn(async move {
+///         receiver.await;
+///         println!("Deadman was dropped");
+///     });
 ///
-/// drop(deadman);
+///     drop(deadman);
+/// }
 /// ```
 #[must_use]
 pub struct Deadman {
